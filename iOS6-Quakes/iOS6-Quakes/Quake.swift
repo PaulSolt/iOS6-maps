@@ -16,9 +16,23 @@ class Quake: Decodable {
     // place
     // time
     struct Properties: Decodable {
-        let mag: Double
+        let mag: Double // Double? // we could make this optional
         let place: String
         let time: Date
+        
+        enum PropertiesCodingKeys: String, CodingKey {
+            case mag
+            case place
+            case time
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: PropertiesCodingKeys.self)
+            // let x = (5 + 7) * 3
+            mag = (try? container.decode(Double.self, forKey: .mag)) ?? 0
+            place = try container.decode(String.self, forKey: .place)
+            time = try container.decode(Date.self, forKey: .time)
+        }
     }
     
     // latitude

@@ -12,6 +12,7 @@ enum QuakeError: Int, Error {
     case invalidURL
     case noDataReturned
     case dateMathError
+    case decodeError
 }
 
 
@@ -54,7 +55,7 @@ class QuakeFetcher {
             URLQueryItem(name: "endtime", value: endTime),
             URLQueryItem(name: "format", value: "geojson")
         ]
-
+        
         urlComponents?.queryItems = queryItems
         
         guard let url = urlComponents?.url else {
@@ -63,8 +64,8 @@ class QuakeFetcher {
             return
         }
         
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "GET"
+        //        var request = URLRequest(url: url)
+        //        request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
@@ -81,13 +82,26 @@ class QuakeFetcher {
             
             // Parsing / decoding
             
-            let json = try! JSONSerialization.jsonObject(with: data, options: [])
-            print(json)
+            //            let json = try! JSONSerialization.jsonObject(with: data, options: [])
+            //            print(json)
             
-            //let jsonDecoder = JSONDecoder()
+            do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.dateDecodingStrategy = .millisecondsSince1970 // based on API
+                
+                let quakeResults = try jsonDecoder.decode(QuakeResults.self, from: data)
+                let quakes = quakeResults.features
+                
+                completion(quakes, nil)
+            } catch {
+                print("Error decoding quakes: \(error)")
+                completion(nil, QuakeError.decodeError)
+                return
+            }
             
+            // other logic to run
             
-        }.resume()
+            }.resume()
     }
     
     
