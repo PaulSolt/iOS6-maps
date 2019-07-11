@@ -15,6 +15,7 @@
 		BD41203F22D799DC00542263 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41203E22D799DC00542263 /* Quake.swift */; };
 		BD41204122D79E8C00542263 /* QuakeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41204022D79E8C00542263 /* QuakeFetcher.swift */; };
 		BD41204322D7AF3400542263 /* Quake+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41204222D7AF3400542263 /* Quake+Mapping.swift */; };
+		BD41204522D7B45700542263 /* QuakeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41204422D7B45700542263 /* QuakeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BD41203E22D799DC00542263 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
 		BD41204022D79E8C00542263 /* QuakeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeFetcher.swift; sourceTree = "<group>"; };
 		BD41204222D7AF3400542263 /* Quake+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quake+Mapping.swift"; sourceTree = "<group>"; };
+		BD41204422D7B45700542263 /* QuakeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BD41202C22D7993500542263 /* AppDelegate.swift */,
 				BD41202E22D7993500542263 /* EarthquakesViewController.swift */,
 				BD41203E22D799DC00542263 /* Quake.swift */,
+				BD41204422D7B45700542263 /* QuakeDetailView.swift */,
 				BD41204222D7AF3400542263 /* Quake+Mapping.swift */,
 				BD41204022D79E8C00542263 /* QuakeFetcher.swift */,
 				BD41203022D7993500542263 /* Main.storyboard */,
@@ -147,6 +150,7 @@
 				BD41202F22D7993500542263 /* EarthquakesViewController.swift in Sources */,
 				BD41204322D7AF3400542263 /* Quake+Mapping.swift in Sources */,
 				BD41204122D79E8C00542263 /* QuakeFetcher.swift in Sources */,
+				BD41204522D7B45700542263 /* QuakeDetailView.swift in Sources */,
 				BD41203F22D799DC00542263 /* Quake.swift in Sources */,
 				BD41202D22D7993500542263 /* AppDelegate.swift in Sources */,
 			);

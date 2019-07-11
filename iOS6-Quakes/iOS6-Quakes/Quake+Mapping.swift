@@ -6,7 +6,6 @@
 //  Copyright © 2019 Lambda, Inc. All rights reserved.
 //
 
-import Foundation
 import MapKit
 
 extension Quake: MKAnnotation {
@@ -14,5 +13,12 @@ extension Quake: MKAnnotation {
         return geometry.location
     }
     
+    var title: String? {
+        return properties.place
+    }
+    
+    var subtitle: String? {
+        return "\(properties.time)"
+    }
     
 }
