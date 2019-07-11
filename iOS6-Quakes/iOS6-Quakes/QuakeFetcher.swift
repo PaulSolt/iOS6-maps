@@ -11,12 +11,33 @@ import Foundation
 enum QuakeError: Int, Error {
     case invalidURL
     case noDataReturned
+    case dateMathError
 }
 
 
 class QuakeFetcher {
     let baseURL = URL(string: "https://earthquake.usgs.gov/fdsnws/event/1/query")!
     let dateFormatter = ISO8601DateFormatter()
+    
+    
+    func fetchQuakes(completion: @escaping ([Quake]?, Error?) -> Void) {
+        
+        // Go back 7 days
+        
+        let now = Date()
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        dateComponents.day = -7 // 7 days in the past
+        
+        guard let oneWeekAgo = Calendar.current.date(byAdding: dateComponents, to: now) else {
+            print("Date math error")
+            completion(nil, QuakeError.dateMathError)
+            return
+        }
+        
+        let interval = DateInterval(start: oneWeekAgo, end: now)
+        fetchQuakes(from: interval, completion: completion)
+    }
     
     func fetchQuakes(from dateInterval: DateInterval,
                      completion: @escaping ([Quake]?, Error?) -> Void) {
@@ -58,8 +79,15 @@ class QuakeFetcher {
                 return
             }
             
-            // Parsing
-        }
+            // Parsing / decoding
+            
+            let json = try! JSONSerialization.jsonObject(with: data, options: [])
+            print(json)
+            
+            //let jsonDecoder = JSONDecoder()
+            
+            
+        }.resume()
     }
     
     

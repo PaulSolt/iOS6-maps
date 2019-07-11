@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    private lazy var quakeFetcher = QuakeFetcher()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        quakeFetcher.fetchQuakes { (quakes, error) in
+            
+            print("It's alive!")
+        }
+        
+        
     }
 
 
