@@ -13,6 +13,7 @@
 		BD41203422D7993700542263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD41203322D7993700542263 /* Assets.xcassets */; };
 		BD41203722D7993700542263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD41203522D7993700542263 /* LaunchScreen.storyboard */; };
 		BD41203F22D799DC00542263 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41203E22D799DC00542263 /* Quake.swift */; };
+		BD41204122D79E8C00542263 /* QuakeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41204022D79E8C00542263 /* QuakeFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BD41203622D7993700542263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD41203822D7993700542263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD41203E22D799DC00542263 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
+		BD41204022D79E8C00542263 /* QuakeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				BD41202C22D7993500542263 /* AppDelegate.swift */,
 				BD41202E22D7993500542263 /* ViewController.swift */,
 				BD41203E22D799DC00542263 /* Quake.swift */,
+				BD41204022D79E8C00542263 /* QuakeFetcher.swift */,
 				BD41203022D7993500542263 /* Main.storyboard */,
 				BD41203322D7993700542263 /* Assets.xcassets */,
 				BD41203522D7993700542263 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD41202F22D7993500542263 /* ViewController.swift in Sources */,
+				BD41204122D79E8C00542263 /* QuakeFetcher.swift in Sources */,
 				BD41203F22D799DC00542263 /* Quake.swift in Sources */,
 				BD41202D22D7993500542263 /* AppDelegate.swift in Sources */,
 			);

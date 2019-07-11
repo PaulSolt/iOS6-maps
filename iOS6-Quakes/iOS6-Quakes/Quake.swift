@@ -34,7 +34,8 @@ class Quake: Decodable {
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: GeometryCodingKeys.self)
             var coordinatesContainer = try container.nestedUnkeyedContainer(forKey: .coordinates)
-            
+
+//         let longitude = (try? coordinatesContainer.decode(Double.self)) ?? 0
             let longitude = try coordinatesContainer.decode(Double.self)
             let latitude = try coordinatesContainer.decode(Double.self)
             
